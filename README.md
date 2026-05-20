@@ -78,13 +78,13 @@ O sistema foi utilizado em um evento real e desenvolvido com foco em simplicidad
   <img src="https://github.com/user-attachments/assets/193607aa-6026-4633-af96-60ce1c8e5064" width="850">
 </p>
 
-### Confirmação de presença
+### Lista de presentes
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/926a6f02-e1f6-4b7b-82b5-441ee48d19fe" width="850">
 </p>
 
-### Área administrativa
+### Formulário de confirmação de presença
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/867348eb-7d89-4907-a274-a9aceb126d17" width="850">
