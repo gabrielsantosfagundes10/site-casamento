@@ -58,6 +58,7 @@ O sistema possui uma área administrativa onde os noivos podem:
 - visualizar quem ainda não confirmou presença;
 - acompanhar os presentes recebidos;
 - gerenciar informações do evento.
+<img width="1253" height="754" alt="image" src="https://github.com/user-attachments/assets/42b36282-eaa9-4207-b79b-cc90573dcf0a" />
 
 ## Tecnologias utilizadas
 
