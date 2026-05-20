@@ -63,3 +63,31 @@ O sistema foi desenvolvido utilizando abordagem responsiva, garantindo compatibi
 O objetivo do projeto foi criar uma plataforma personalizada para casamento que unisse organização, praticidade e boa experiência para os convidados.
 
 O sistema foi utilizado em um evento real e desenvolvido com foco em simplicidade, desempenho e usabilidade.
+
+## Preview do projeto
+
+### Página inicial
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/3090ed1e-1def-4d84-943b-2442ced8f3b8" width="850">
+</p>
+
+### Localização e informações
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/193607aa-6026-4633-af96-60ce1c8e5064" width="850">
+</p>
+
+### Confirmação de presença
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/926a6f02-e1f6-4b7b-82b5-441ee48d19fe" width="850">
+</p>
+
+### Área administrativa
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/867348eb-7d89-4907-a274-a9aceb126d17" width="850">
+</p>
+
+
