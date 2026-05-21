@@ -4,9 +4,9 @@ date_default_timezone_set('America/Sao_Paulo');
 
 // Credenciais da Hostinger conforme a imagem enviada
 $host = "localhost";
-$usuario = "u329949841_casamento";
-$senha = "Casamento2225";
-$banco = "u329949841_casamento";
+$usuario = "usuario"; // Credenciais alteradas por confidencialidade
+$senha = "senha"; // Credenciais alteradas por confidencialidade
+$banco = "banco"; // Credenciais alteradas por confidencialidade
 
 $conn = new mysqli($host, $usuario, $senha, $banco);
 
