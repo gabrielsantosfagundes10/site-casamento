@@ -9,14 +9,12 @@ while ($row = $result->fetch_assoc()) {
     $presentes[$row['id']] = $row;
 }
 
-// FUNÇÃO ATUALIZADA: Agora passa o nome do presente para o Alerta
 function item($id, $nome, $presentes) {
     if (!isset($presentes[$id])) return "";
     
     $isEscolhido = ($presentes[$id]['escolhido'] == 1);
     $checked = $isEscolhido ? 'checked disabled' : '';
     
-    // Se não estiver escolhido, adicionamos o evento de clique com o nome do presente
     $onclick = !$isEscolhido ? "onclick=\"escolherPresente(this, $id, '$nome')\"" : "";
     
     return "
@@ -48,9 +46,6 @@ function item($id, $nome, $presentes) {
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
     <style>
-        /* --- AJUSTES GERAIS DE RESPONSIVIDADE --- */
-        
-        /* Ajuste do Hero para telas menores */
         .hero-overlay h1 {
             margin-bottom: 20px;
             font-size: 5rem;
@@ -62,15 +57,13 @@ function item($id, $nome, $presentes) {
             letter-spacing: 5px;
         }
 
-        /* Ajuste das Colunas da Lista de Presentes */
         .container_colunas_cozinha {
             display: grid;
-            grid-template-columns: repeat(4, 1fr); /* 4 colunas no desktop */
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
             margin-top: 20px;
         }
 
-        /* Seta e Indicadores - CENTRALIZAÇÃO GERAL */
         .scroll-indicator {
             position: absolute;
             bottom: 30px;
@@ -109,8 +102,6 @@ function item($id, $nome, $presentes) {
             display: inline-block;
         }
 
-        /* --- MEDIA QUERIES --- */
-
         @media (max-width: 1024px) {
             .container_colunas_cozinha {
                 grid-template-columns: repeat(2, 1fr);
@@ -128,7 +119,7 @@ function item($id, $nome, $presentes) {
             }
 
             .container_colunas_cozinha {
-                grid-template-columns: 1fr; /* 1 coluna no celular */
+                grid-template-columns: 1fr;
                 gap: 10px;
             }
 
@@ -147,7 +138,6 @@ function item($id, $nome, $presentes) {
                 margin-bottom: 20px;
             }
 
-            /* CORREÇÃO DEFINITIVA SETA MOBILE */
             .scroll-indicator.final-lista {
                 position: relative !important;
                 left: auto !important;
@@ -178,7 +168,6 @@ function item($id, $nome, $presentes) {
             60% { transform: translateY(-5px) rotate(45deg); }
         }
 
-        /* Seta final da lista centralizada (Desktop) */
         .scroll-indicator.final-lista {
             position: relative;
             margin: 40px auto; 
@@ -231,7 +220,7 @@ function item($id, $nome, $presentes) {
 
 <section id="contagem" class="contagem-regressiva">
     <div class="container" data-aos="fade-up">
-        <h3>Faltam apenas:</h3>
+        <h3 id="countdown-title">Faltam apenas:</h3>
         <div id="countdown">
             <div class="tempo"><span id="days">00</span><p>Dias</p></div>
             <div class="tempo"><span id="hours">00</span><p>Horas</p></div>
@@ -438,6 +427,35 @@ function item($id, $nome, $presentes) {
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     AOS.init({ duration: 800, once: true });
+
+    const targetDate = new Date("2026-04-12T00:00:00").getTime();
+    const countdownTitle = document.getElementById("countdown-title");
+    const countdownContainer = document.getElementById("countdown");
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const difference = targetDate - now;
+
+        if (difference < 0) {
+            countdownTitle.innerText = "O grande dia já aconteceu! 💕";
+            countdownContainer.style.display = "none";
+            clearInterval(timerInterval);
+            return;
+        }
+
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = String(days).padStart(2, '0');
+        document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+        document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+        document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+    }
+
+    const timerInterval = setInterval(updateCountdown, 1000);
+    updateCountdown();
 </script>
 <script src="script.js"></script>
 
